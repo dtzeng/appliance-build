@@ -319,15 +319,15 @@ MAIN_MENU_FICL=(
 # outdated by the time dx_execute is called. Before deleting the dataset we
 # first verify that it doesn't contain anything useful.
 #
-(
-	cd "$TMP_ROOT/var/delphix" || die "failed to cd into $TMP_ROOT/var/delphix"
-	# We only expect to find:
-	#  ./dropbox
-	[[ $(find . -mindepth 1 | wc -l) -eq 1 ]] ||
-		die "linux dataset for /var/delphix contains unexpected files"
-	[[ -d dropbox ]] ||
-		die "linux dataset for /var/delphix should contain directory dropbox"
-) || die "verification of /var/delphix failed"
+#(
+#	cd "$TMP_ROOT/var/delphix" || die "failed to cd into $TMP_ROOT/var/delphix"
+#	# We only expect to find:
+#	#  ./dropbox
+#	[[ $(find . -mindepth 1 | wc -l) -eq 1 ]] ||
+#		die "linux dataset for /var/delphix contains unexpected files"
+#	[[ -d dropbox ]] ||
+#		die "linux dataset for /var/delphix should contain directory dropbox"
+#) || die "verification of /var/delphix failed"
 
 umount "$TMP_ROOT/var/log" ||
 	die "couldn't unmount linux dataset $TMP_ROOT/var/log"
